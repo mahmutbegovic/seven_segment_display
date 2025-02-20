@@ -1,0 +1,31 @@
+using "./stm32f0.repl"
+
+flash: Memory.MappedMemory @ sysbus 0x08000000
+    size: 0x20000
+
+sram: Memory.MappedMemory @ sysbus 0x20000000
+    size: 0x4000
+
+crc:
+    configurablePoly: true
+
+seg_a: Miscellaneous.LED @ gpioPortA
+seg_b: Miscellaneous.LED @ gpioPortA
+seg_c: Miscellaneous.LED @ gpioPortA
+seg_d: Miscellaneous.LED @ gpioPortA
+seg_e: Miscellaneous.LED @ gpioPortA
+seg_f: Miscellaneous.LED @ gpioPortA
+seg_g: Miscellaneous.LED @ gpioPortA
+dig_1: Miscellaneous.LED @ gpioPortA
+dig_2: Miscellaneous.LED @ gpioPortA
+
+gpioPortA:
+    4 -> seg_a@0
+    5 -> seg_b@0
+    6 -> seg_c@0
+    7 -> seg_d@0
+    8 -> seg_e@0
+    9 -> seg_f@0
+    10 -> seg_g@0
+    11 -> dig_1@0
+    12 -> dig_2@0

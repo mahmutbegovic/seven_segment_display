@@ -1,0 +1,14 @@
+using sysbus
+
+mach create
+machine LoadPlatformDescription $ORIGIN/stm32f072.repl
+
+showAnalyzer usart2
+
+sysbus LoadELF $ORIGIN/../build/bare.elf
+
+i $ORIGIN/vis.py
+
+s
+
+serveVisualization 8000
