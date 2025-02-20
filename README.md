@@ -9,6 +9,6 @@ https://github.com/renode/renode
 https://developer.arm.com/downloads/-/arm-gnu-toolchain-downloads
 
 ## Build
--- cmake -B build
--- cmake --build build --target run_in_renode
--- open localhost:8000 in browser
+- cmake -B build
+- cmake --build build --target run_in_renode
+- open localhost:8000 in browser
